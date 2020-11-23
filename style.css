@@ -8,6 +8,7 @@
     display: none;
 }
 
+
 .carGame{
     width: 100%;
     height: 100%;
@@ -16,6 +17,8 @@
     background-size: 100% 100% ;
     height: 100vh;
 }
+
+
 
 .startScreenPopup{
     position: absolute;
@@ -30,7 +33,6 @@
     border: 1px solid #ff6b6b;
     padding: 15px;
     margin: auto;
-    font-family: carfont;
     letter-spacing: 5;
     font-size: 20px;
     word-spacing: 3;
@@ -48,7 +50,6 @@
 }
 
 
-
 .lines{
     width: 10px;
     height: 40px;
@@ -60,7 +61,7 @@
 
 .score{
     position: absolute;
-    top: 15px;
+    top: 100px;
     left: 40px;
     background-color: palevioletred;
     width: 220px;
@@ -72,9 +73,22 @@
     font-family: fantasy;
     box-shadow: 5px 5px 10px #777;
     /* box shadow- horzontal offset, vertical offset, kitna blur kar raha hai , color */
+}
 
-
-
+.level{
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    background-color: palevioletred;
+    width: 220px;
+    /* height: 70px; */
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-family: fantasy;
+    box-shadow: 5px 5px 10px #777;
+    /* box shadow- horzontal offset, vertical offset, kitna blur kar raha hai , color */
 }
 
 .car, .enemy{
@@ -114,12 +128,4 @@
     border-right: 7px dashed #c8d6e5;
     border-top: solid black 7px;
     border-bottom: solid black 7px;
-}
-
-.nitro{
-    height: 10px;
-    width: 10px;
-    z-index: 3;
-    background-color: green;
-    top: 20vh;
 }

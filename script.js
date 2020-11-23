@@ -1,4 +1,5 @@
 const score = document.querySelector(".score");
+const level = document.querySelector(".level");
 const startScreenPopup = document.querySelector(".startScreenPopup");
 const gameArea = document.querySelector(".gameArea");
 
@@ -53,7 +54,7 @@ function endGame() {
     player.start = false;
     startScreenPopup.classList.remove('hide');
     let ps = player.score + (1 * player.level);
-    startScreenPopup.innerHTML = "Game Over <br> final score: " + (ps);
+    startScreenPopup.innerHTML = "Game Over <br> final score: " + (ps) + "<br> Did you forgot nitros ? <br> Use Shift";
     + "<br> press to restart";
 }
 
@@ -191,6 +192,7 @@ function gamePlay() {
         player.score += (player.level * 1);
         player.score = Math.floor(player.score);
         score.innerText = "Score: " + player.score;
+        level.innerText = "Level: " + player.level;
     }
 }
 
