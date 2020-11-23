@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-
+    
     <div class="carGame">
 
         <h1 class="heading">Safe driving Car Game</h1>
@@ -28,7 +29,7 @@
 
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./script.js "></script>
 
 
 </body>
