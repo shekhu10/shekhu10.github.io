@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nerko One', cursive;
+
+}
+.hide{
+    display: none;
+}
+
+.carGame{
+    width: 100%;
+    height: 100%;
+    background-image: url('./abc.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+    height: 100vh;
+}
+
+.startScreenPopup{
+    position: absolute;
+    background-color: #ee5253;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    /* z-index: 1; so that it comes at top naki background mein chup jaye */
+    text-align: center;
+    border: 1px solid #ff6b6b;
+    padding: 15px;
+    margin: auto;
+    font-family: carfont;
+    letter-spacing: 5;
+    font-size: 20px;
+    word-spacing: 3;
+    line-height: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 5px #777;
+
+}
+
+.heading{
+    /* background: red; */
+    margin: auto;
+    text-align: center;
+    font-size: 5rem;
+}
+
+
+
+.lines{
+    width: 10px;
+    height: 40px;
+    background: white;
+    position: relative;
+    margin: auto;
+
+}
+
+.score{
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    background-color: palevioletred;
+    width: 220px;
+    /* height: 70px; */
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-family: fantasy;
+    box-shadow: 5px 5px 10px #777;
+    /* box shadow- horzontal offset, vertical offset, kitna blur kar raha hai , color */
+
+
+
+}
+
+.car, .enemy{
+    width: 50px;
+    height: 80px;
+    background-image: url('./car.png');
+    background-color: red;
+    position: absolute;
+    /* transform: rotate(20deg); */
+    /* left: 50px; */
+    /* top: 120px; */
+    z-index: 1;
+    bottom: 20px;
+    max-width:100%;
+    max-height:100%;
+    background-repeat: no-repeat;
+    background-size: 50px 80px;
+    border-radius: 10px;
+    /* object-fit: cover; */
+
+
+    /* add image after creating transparent image */
+    
+}
+
+
+.gameArea{
+    width: 400px;
+    /* height: 100vh; */
+    top: 15vh;
+    height: 70vh;
+    background: #2d3436;
+    margin: auto;
+    position: relative;
+    overflow: hidden;  /* this makes that car iske bahr aaye to hide ho jaye */
+    border-left: 7px dashed #c8d6e5;
+    border-right: 7px dashed #c8d6e5;
+    border-top: solid black 7px;
+    border-bottom: solid black 7px;
+}
+
+.nitro{
+    height: 10px;
+    width: 10px;
+    z-index: 3;
+    background-color: green;
+    top: 20vh;
+}
