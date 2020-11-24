@@ -74,6 +74,28 @@
     box-shadow: 5px 5px 10px #777;
     /* box shadow- horzontal offset, vertical offset, kitna blur kar raha hai , color */
 }
+.nitros{
+    width: 50px;
+    height: 80px;
+    background-image: url('./nitros.png');
+    /* background-color: green; */
+    position: absolute;
+    /* transform: rotate(20deg); */
+    /* left: 50px; */
+    /* top: 120px; */
+    z-index: 1;
+    bottom: 10px;
+    max-width:100%;
+    max-height:100%;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    border-radius: 10px;
+    /* object-fit: cover; */
+
+
+    /* add image after creating transparent image */
+
+}
 
 .level{
     position: absolute;

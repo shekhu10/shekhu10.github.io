@@ -45,6 +45,7 @@ function moveLines() {
         if (item.y >= 800) {
             item.y -= 1050;
         }
+        
         item.y += (player.speed * player.level + player.nitros);
         item.style.top = item.y + "px";
     })
@@ -91,6 +92,7 @@ function isColloid(a, b) {
 
 function gameStart() {
     startScreenPopup.classList.add('hide');
+    
     gameArea.innerHTML = "";
     window.requestAnimationFrame(gamePlay);
 
@@ -99,6 +101,7 @@ function gameStart() {
     player.score = 0;
     player.nitros = 0;
     player.nitros_time = 0;
+    player.level = 1;
     
 
     // for road lines
@@ -111,13 +114,23 @@ function gameStart() {
         gameArea.appendChild(roadLine);
     }
 
-
+    // car
     let car = document.createElement('div');
     car.setAttribute('class', 'car');
     car.innerText = "";
     gameArea.appendChild(car);
     player.x = car.offsetLeft;
     player.y = car.offsetTop;
+
+    // for nitros
+    let nitros = document.createElement('div');
+    nitros.setAttribute('class', 'nitros')
+    nitros.innerText ="";
+    gameArea.appendChild(nitros);
+    nitros.classList.add('hide');
+    player.nitros_x = player.x;
+    let car_dimensions = car.getBoundingClientRect();
+    player.nitros_y = player.y + car_dimensions.height;
 
     
     // for enemy cars
@@ -148,7 +161,9 @@ function RandomColor() {
 
 function gamePlay() {
     let car = document.querySelector(".car");
+    let nitros = document.querySelector(".nitros");
     let road_dimensions = gameArea.getBoundingClientRect();
+    
 
     // console.log("game is started");
 
@@ -158,33 +173,47 @@ function gamePlay() {
         moveEnemyCars(car);
 
         
-
+        
+        
+        
         player.level = Math.floor(player.score / 1000) + 1;
 
         if (keys.Shift == true){
             player.nitros = Math.floor(player.speed * player.level / 2);
+            nitros.classList.remove('hide');
         }
         else{
             player.nitros = 0;
+            nitros.classList.add('hide');
         }
+
+        if (player.level == 1){
+            player.nitros *= (3);
+        }        
 
         
         if ((keys.ArrowUp == true || keys.w == true) && player.y > road_dimensions.height / 7) {
             player.y -= (player.speed * player.level + player.nitros);
+            player.nitros_y -= (player.speed * player.level + player.nitros);
         }
         if ((keys.ArrowDown == true || keys.s == true) && player.y < (road_dimensions.height - car.offsetHeight - 20)) {
-
             player.y += (player.speed * player.level + player.nitros);
+            player.nitros_y += (player.speed * player.level + player.nitros);
         }
         if ((keys.ArrowLeft == true || keys.a == true) && player.x > 0) {
             player.x -= (player.speed * player.level + player.nitros);
+            player.nitros_x -= (player.speed * player.level + player.nitros);
         }
         if ((keys.ArrowRight == true || keys.d == true) && player.x < (road_dimensions.width - car.offsetWidth - 14)) {
             player.x += (player.speed * player.level + player.nitros);
+            player.nitros_x += (player.speed * player.level + player.nitros);
         }
         
         car.style.top = player.y + "px";
         car.style.left = player.x + "px";
+        nitros.style.top = player.nitros_y + "px";
+        nitros.style.left = player.nitros_x + "px";
+
         window.requestAnimationFrame(gamePlay);
 
 
